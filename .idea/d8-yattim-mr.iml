@@ -21,7 +21,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/drupal/console-extend-plugin" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/drupal/core-composer-scaffold" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/drupal/core-project-message" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/drupal/core-vendor-hardening" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/easyrdf/easyrdf" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/egulias/email-validator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
