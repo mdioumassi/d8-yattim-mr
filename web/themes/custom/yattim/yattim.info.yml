@@ -24,4 +24,4 @@ regions:
   page_bottom: 'Page bottom'
 
 libraries:
-    - 'aisha/global-styling'
+    - 'yattim/global-styling'

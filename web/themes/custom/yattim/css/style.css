@@ -2,13 +2,12 @@
  * If using a CSS pre-processor, tell it to overwrite this file. If not, place
  * your custom CSS modifications here.
  */
-.container{
-  margin-right: auto;
-  width: 70%;
+.container {
+  width: 75%;
 }
 
 #footer {
-  background-color: #2C3E50;
+  background-color: #000000;
   margin-top: 25px;
   color: #ffffff;
 }
@@ -115,4 +114,8 @@ padding: 0px;
   position: absolute;
   top: 8px;
   right: 16px;
+}
+
+.banniere img{
+  cursor: none;
 }
