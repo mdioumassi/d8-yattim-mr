@@ -116,6 +116,13 @@ padding: 0px;
   right: 16px;
 }
 
-.banniere img{
+.region-banniere img{
   cursor: none;
+}
+#menu-account li a span{
+  font-size: 35px;
+  color: #FFF;
+}
+#menu-account li a:hover{
+  color: #000000;
 }
