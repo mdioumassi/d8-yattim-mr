@@ -116,13 +116,43 @@ padding: 0px;
   right: 16px;
 }
 
-.region-banniere img{
-  cursor: none;
-}
 #menu-account li a span{
   font-size: 35px;
   color: #FFF;
 }
-#menu-account li a:hover{
-  color: #000000;
+#menu-account li a span:hover{
+  color: #009933;
+}
+
+.navbar-default {
+  background-color: #009933;
+  border-color: #009933;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #00b33c;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+  background-color: #00b33c;
+}
+
+.navbar-nav {
+  float: left;
+  margin: 5px;
+}
+.navbar-brand {
+  float: left;
+  height: 50px;
+  padding: 18.5px 15px;
+  font-size: 25px;
+  line-height: 21px;
+}
+.navbar-nav .dropdown:hover{
+  background-color:  #00b33c;
+}
+
+.navbar-nav .expanded a:hover{
+  background-color:  #00b33c;
 }
