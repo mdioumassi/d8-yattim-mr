@@ -149,7 +149,7 @@ padding: 0px;
   font-size: 25px;
   line-height: 21px;
 }
-.navbar-nav .dropdown:hover{
+.navbar-nav .expanded .open:hover{
   background-color:  #00b33c;
 }
 

@@ -53,18 +53,20 @@
 #}
 {% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
 {# Navbar #}
-<div id="top-container" class="row" style="background-color: #5b80a4;">
+<div id="top-container" class="row">
   <div class="row">
-    <div class="col-sm-9" ></div>
-    <div class="col-sm-3">
-      <div id="logo" style="position: fixed; z-index: 1; display: none">
-        <img class="logo_header" src="/sites/default/files/inline-images/logo1.jpeg">
-      </div>
+    <div class="col-sm-10">
+      {% if page.banniere %}
+        {{ page.banniere }}
+      {% endif %}
+    </div>
+    <div class="col-sm-2" style="margin-left: -22px">
+      {% if page.soutenir %}
+        {{ page.soutenir }}
+      {% endif %}
     </div>
   </div>
-  {% if page.banniere %}
-      {{ page.banniere }}
-  {% endif %}
+
 </div>
 {% if page.navigation or page.navigation_collapsible %}
   {% block navbar %}
