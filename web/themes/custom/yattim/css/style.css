@@ -156,3 +156,16 @@ padding: 0px;
 .navbar-nav .expanded a:hover{
   background-color:  #00b33c;
 }
+
+.container-actu img {vertical-align: middle;}
+
+.container-actu .content {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 97%;
+  height: 85px;
+  padding: 20px;
+}
