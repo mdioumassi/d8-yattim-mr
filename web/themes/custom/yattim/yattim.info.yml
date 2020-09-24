@@ -10,7 +10,7 @@ regions:
   navigation: 'Navigation'
   navigation_collapsible: 'Navigation (Collapsible)'
   banniere: 'Entete carrousel'
-  soutenir: 'Encart nous soutenir'
+# soutenir: 'Encart nous soutenir'
   header: 'Top Bar'
   highlighted: 'Highlighted'
   help: 'Help'

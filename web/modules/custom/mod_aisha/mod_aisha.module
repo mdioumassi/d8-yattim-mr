@@ -7,8 +7,17 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\Core\Url;
 
+/**
+ * Implement hook_user_login()
+ */
+/*function mod_aisha_user_login($account) {
+  $url = Url::fromRoute('<front>');
+  $new_url = new RedirectResponse($url->toString());
+  $new_url->send();
+}*/
 /**
  * Implements hook_help().
  */
