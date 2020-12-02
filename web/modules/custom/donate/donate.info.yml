@@ -1,0 +1,5 @@
+name: 'donate'
+type: module
+description: 'Faire un don'
+core: 8.x
+package: 'Custom'
