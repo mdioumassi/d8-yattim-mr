@@ -10,9 +10,10 @@ use Drupal\Core\Routing\RouteMatchInterface;
 /**
  * Implements hook_help().
  */
-function donate_help($route_name, RouteMatchInterface $route_match) {
+function donate_help($route_name, RouteMatchInterface $route_match)
+{
   switch ($route_name) {
-    // Main module help for the donate module.
+      // Main module help for the donate module.
     case 'help.page.donate':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
@@ -21,4 +22,16 @@ function donate_help($route_name, RouteMatchInterface $route_match) {
 
     default:
   }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function donate_theme($existing, $type, $theme, $path)
+{
+  return [
+    'donate_paiement_confirmation' => [
+      'variables' => ['test_var' => NULL],
+    ],
+  ];
 }
