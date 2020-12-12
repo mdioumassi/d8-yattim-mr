@@ -1,0 +1,8 @@
+donate:
+  css:
+    theme:
+      css/donate.css: {}
+  js:
+    js/donate.js: {}
+  dependencies:
+    - core/jquery

@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains donate.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function donate_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the donate module.
+    case 'help.page.donate':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Faire un don') . '</p>';
+      return $output;
+
+    default:
+  }
+}
