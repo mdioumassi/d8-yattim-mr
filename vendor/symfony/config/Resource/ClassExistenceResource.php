@@ -18,10 +18,8 @@ namespace Symfony\Component\Config\Resource;
  * The resource must be a fully-qualified class name.
  *
  * @author Fabien Potencier <fabien@symfony.com>
- *
- * @final since Symfony 4.3
  */
-class ClassExistenceResource implements SelfCheckingResourceInterface
+class ClassExistenceResource implements SelfCheckingResourceInterface, \Serializable
 {
     private $resource;
     private $exists;
@@ -34,7 +32,7 @@ class ClassExistenceResource implements SelfCheckingResourceInterface
      * @param string    $resource The fully-qualified class name
      * @param bool|null $exists   Boolean when the existency check has already been done
      */
-    public function __construct(string $resource, bool $exists = null)
+    public function __construct($resource, $exists = null)
     {
         $this->resource = $resource;
         if (null !== $exists) {
@@ -114,20 +112,22 @@ class ClassExistenceResource implements SelfCheckingResourceInterface
     /**
      * @internal
      */
-    public function __sleep(): array
+    public function serialize()
     {
         if (null === $this->exists) {
             $this->isFresh(0);
         }
 
-        return ['resource', 'exists'];
+        return serialize([$this->resource, $this->exists]);
     }
 
     /**
      * @internal
      */
-    public function __wakeup()
+    public function unserialize($serialized)
     {
+        list($this->resource, $this->exists) = unserialize($serialized);
+
         if (\is_bool($this->exists)) {
             $this->exists = [$this->exists, null];
         }
@@ -190,17 +190,12 @@ class ClassExistenceResource implements SelfCheckingResourceInterface
             'args' => [$class],
         ];
 
-        if (\PHP_VERSION_ID >= 80000 && isset($trace[1])) {
-            $callerFrame = $trace[1];
-            $i = 2;
-        } elseif (false !== $i = array_search($autoloadFrame, $trace, true)) {
-            $callerFrame = $trace[++$i];
-        } else {
+        if (false === $i = array_search($autoloadFrame, $trace, true)) {
             throw $e;
         }
 
-        if (isset($callerFrame['function']) && !isset($callerFrame['class'])) {
-            switch ($callerFrame['function']) {
+        if (isset($trace[++$i]['function']) && !isset($trace[$i]['class'])) {
+            switch ($trace[$i]['function']) {
                 case 'get_class_methods':
                 case 'get_class_vars':
                 case 'get_parent_class':
@@ -219,8 +214,8 @@ class ClassExistenceResource implements SelfCheckingResourceInterface
             }
 
             $props = [
-                'file' => isset($callerFrame['file']) ? $callerFrame['file'] : null,
-                'line' => isset($callerFrame['line']) ? $callerFrame['line'] : null,
+                'file' => isset($trace[$i]['file']) ? $trace[$i]['file'] : null,
+                'line' => isset($trace[$i]['line']) ? $trace[$i]['line'] : null,
                 'trace' => \array_slice($trace, 1 + $i),
             ];
 

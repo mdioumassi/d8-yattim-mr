@@ -95,8 +95,16 @@ class MatcherDumperTest extends KernelTestBase {
     $dumper_routes = $dumper->getRoutes()->all();
     $collection_routes = $collection->all();
 
+    $success = TRUE;
     foreach ($collection_routes as $name => $route) {
-      $this->assertNotEmpty($dumper_routes[$name], "Route $name should be present in the dumper.");
+      if (empty($dumper_routes[$name])) {
+        $success = FALSE;
+        $this->fail('Not all routes found in the dumper.');
+      }
+    }
+
+    if ($success) {
+      $this->pass('All routes found in the dumper.');
     }
   }
 

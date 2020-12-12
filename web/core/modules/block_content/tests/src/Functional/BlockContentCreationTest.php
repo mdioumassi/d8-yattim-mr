@@ -204,7 +204,7 @@ class BlockContentCreationTest extends BlockContentTestBase {
       $this->fail('Expected exception has not been thrown.');
     }
     catch (\Exception $e) {
-      // Expected exception; just continue testing.
+      $this->pass('Expected exception has been thrown.');
     }
 
     $connection = Database::getConnection();

@@ -551,7 +551,7 @@ class EntityCrudHookTest extends EntityKernelTestBase {
       $this->fail('Expected exception has not been thrown.');
     }
     catch (\Exception $e) {
-      // Expected exception; just continue testing.
+      $this->pass('Expected exception has been thrown.');
     }
 
     if (Database::getConnection()->supportsTransactions()) {

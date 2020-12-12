@@ -428,7 +428,7 @@ class TypedDataTest extends KernelTestBase {
       $this->fail('No exception has been thrown when setting an invalid value.');
     }
     catch (\Exception $e) {
-      // Expected exception; just continue testing.
+      $this->pass('Exception thrown:' . $e->getMessage());
     }
   }
 
@@ -550,7 +550,7 @@ class TypedDataTest extends KernelTestBase {
       $this->fail('No exception has been thrown when getting an invalid value.');
     }
     catch (\Exception $e) {
-      // Expected exception; just continue testing.
+      $this->pass('Exception thrown:' . $e->getMessage());
     }
 
     // Test setting invalid values.
@@ -559,7 +559,7 @@ class TypedDataTest extends KernelTestBase {
       $this->fail('No exception has been thrown when setting an invalid value.');
     }
     catch (\Exception $e) {
-      // Expected exception; just continue testing.
+      $this->pass('Exception thrown:' . $e->getMessage());
     }
 
     // Test adding a new property to the map.

@@ -96,7 +96,7 @@ class ModuleHandlerTest extends KernelTestBase {
       $this->fail('ModuleInstaller::install() throws an exception if dependencies are missing.');
     }
     catch (MissingDependencyException $e) {
-      // Expected exception; just continue testing.
+      $this->pass('ModuleInstaller::install() throws an exception if dependencies are missing.');
     }
 
     $this->assertFalse($this->moduleHandler()->moduleExists('color'), 'ModuleInstaller::install() aborts if dependencies are missing.');
@@ -292,7 +292,7 @@ class ModuleHandlerTest extends KernelTestBase {
       $this->fail($message);
     }
     catch (ModuleUninstallValidatorException $e) {
-      // Expected exception; just continue testing.
+      $this->pass(get_class($e) . ': ' . $e->getMessage());
     }
 
     // Uninstalling help needs entity_test to be un-installable.
@@ -302,7 +302,7 @@ class ModuleHandlerTest extends KernelTestBase {
       $this->fail($message);
     }
     catch (ModuleUninstallValidatorException $e) {
-      // Expected exception; just continue testing.
+      $this->pass(get_class($e) . ': ' . $e->getMessage());
     }
 
     // Deleting the entity.

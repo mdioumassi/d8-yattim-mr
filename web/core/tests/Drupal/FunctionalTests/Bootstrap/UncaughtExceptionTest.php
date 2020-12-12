@@ -240,7 +240,8 @@ class UncaughtExceptionTest extends BrowserTestBase {
 
       default:
         // We can not carry out this test.
-        $this->markTestSkipped('Unable to run \Drupal\system\Tests\System\UncaughtExceptionTest::testLostDatabaseConnection for this database type.');
+        $this->pass('Unable to run \Drupal\system\Tests\System\UncaughtExceptionTest::testLostDatabaseConnection for this database type.');
+        return;
     }
 
     // We simulate a broken database connection by rewrite settings.php to no

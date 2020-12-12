@@ -344,7 +344,10 @@ class BulkDeleteTest extends FieldKernelTestBase {
     // bundle.
     $actual_hooks = field_test_memorize();
     $hooks = [];
-    $hooks['field_test_field_delete'] = $this->entitiesByBundles[$bundle];
+    $entities = $this->entitiesByBundles[$bundle];
+    foreach ($entities as $id => $entity) {
+      $hooks['field_test_field_delete'][] = $entity;
+    }
     $this->checkHooksInvocations($hooks, $actual_hooks);
 
     // The field still exists, deleted.
@@ -392,7 +395,10 @@ class BulkDeleteTest extends FieldKernelTestBase {
     // bundle.
     $actual_hooks = field_test_memorize();
     $hooks = [];
-    $hooks['field_test_field_delete'] = $this->entitiesByBundles[$bundle];
+    $entities = $this->entitiesByBundles[$bundle];
+    foreach ($entities as $id => $entity) {
+      $hooks['field_test_field_delete'][] = $entity;
+    }
     $this->checkHooksInvocations($hooks, $actual_hooks);
 
     // The field still exists, deleted.
@@ -424,7 +430,10 @@ class BulkDeleteTest extends FieldKernelTestBase {
     // Check hooks invocations (same as above, for the 2nd bundle).
     $actual_hooks = field_test_memorize();
     $hooks = [];
-    $hooks['field_test_field_delete'] = $this->entitiesByBundles[$bundle];
+    $entities = $this->entitiesByBundles[$bundle];
+    foreach ($entities as $id => $entity) {
+      $hooks['field_test_field_delete'][] = $entity;
+    }
     $this->checkHooksInvocations($hooks, $actual_hooks);
 
     // The field and the storage still exist, deleted.

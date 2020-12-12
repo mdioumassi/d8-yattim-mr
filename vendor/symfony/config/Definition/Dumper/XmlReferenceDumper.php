@@ -41,7 +41,12 @@ class XmlReferenceDumper
         return $ref;
     }
 
-    private function writeNode(NodeInterface $node, int $depth = 0, bool $root = false, string $namespace = null)
+    /**
+     * @param int    $depth
+     * @param bool   $root      If the node is the root node
+     * @param string $namespace The namespace of the node
+     */
+    private function writeNode(NodeInterface $node, $depth = 0, $root = false, $namespace = null)
     {
         $rootName = ($root ? 'config' : $node->getName());
         $rootNamespace = ($namespace ?: ($root ? 'http://example.org/schema/dic/'.$node->getName() : null));
@@ -53,7 +58,7 @@ class XmlReferenceDumper
             });
 
             if (\count($remapping)) {
-                [$singular] = current($remapping);
+                list($singular) = current($remapping);
                 $rootName = $singular;
             }
         }
@@ -91,7 +96,7 @@ class XmlReferenceDumper
                 }
 
                 if ($prototype instanceof PrototypedArrayNode) {
-                    $prototype->setName($key ?? '');
+                    $prototype->setName($key);
                     $children = [$key => $prototype];
                 } elseif ($prototype instanceof ArrayNode) {
                     $children = $prototype->getChildren();
@@ -188,7 +193,7 @@ class XmlReferenceDumper
                 $commentDepth = $depth + 4 + \strlen($attrName) + 2;
                 $commentLines = explode("\n", $comment);
                 $multiline = (\count($commentLines) > 1);
-                $comment = implode(\PHP_EOL.str_repeat(' ', $commentDepth), $commentLines);
+                $comment = implode(PHP_EOL.str_repeat(' ', $commentDepth), $commentLines);
 
                 if ($multiline) {
                     $this->writeLine('<!--', $depth);
@@ -253,21 +258,26 @@ class XmlReferenceDumper
 
     /**
      * Outputs a single config reference line.
+     *
+     * @param string $text
+     * @param int    $indent
      */
-    private function writeLine(string $text, int $indent = 0)
+    private function writeLine($text, $indent = 0)
     {
         $indent = \strlen($text) + $indent;
         $format = '%'.$indent.'s';
 
-        $this->reference .= sprintf($format, $text).\PHP_EOL;
+        $this->reference .= sprintf($format, $text).PHP_EOL;
     }
 
     /**
      * Renders the string conversion of the value.
      *
      * @param mixed $value
+     *
+     * @return string
      */
-    private function writeValue($value): string
+    private function writeValue($value)
     {
         if ('%%%%not_defined%%%%' === $value) {
             return '';

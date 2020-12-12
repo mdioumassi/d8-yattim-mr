@@ -131,7 +131,12 @@ class ToolbarCacheContextsTest extends BrowserTestBase {
     $this->drupalGet('test-page');
     $return = $return && $this->assertCacheContexts($cache_contexts);
 
-    $this->assertTrue($return, $message);
+    if ($return) {
+      $this->pass($message);
+    }
+    else {
+      $this->fail($message);
+    }
     return $return;
   }
 

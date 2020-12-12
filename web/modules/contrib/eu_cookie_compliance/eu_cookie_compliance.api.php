@@ -18,7 +18,7 @@
  *   Whether to show the cookie compliance banner.
  */
 function hook_eu_cookie_compliance_geoip_match_alter(&$geoip_match) {
-  $geoip_match['in_eu'] = FALSE;
+  $geoip_match = FALSE;
 }
 
 /**

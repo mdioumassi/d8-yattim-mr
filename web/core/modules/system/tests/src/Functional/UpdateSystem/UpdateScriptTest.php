@@ -659,26 +659,17 @@ class UpdateScriptTest extends BrowserTestBase {
    * Tests maintenance mode link on update.php.
    */
   public function testMaintenanceModeLink() {
-    $full_admin_user = $this->drupalCreateUser([
+    $admin_user = $this->drupalCreateUser([
       'administer software updates',
       'access administration pages',
       'administer site configuration',
     ]);
-    $this->drupalLogin($full_admin_user);
+    $this->drupalLogin($admin_user);
     $this->drupalGet($this->updateUrl, ['external' => TRUE]);
     $this->assertSession()->statusCodeEquals(200);
     $this->clickLink('maintenance mode');
     $this->assertSession()->statusCodeEquals(200);
-    $this->assertSession()->elementContains('css', 'main h1', 'Maintenance mode');
-
-    // Now login as a user with only 'administer software updates' (but not
-    // 'administer site configuration') permission and try again.
-    $this->drupalLogin($this->updateUser);
-    $this->drupalGet($this->updateUrl, ['external' => TRUE]);
-    $this->assertSession()->statusCodeEquals(200);
-    $this->clickLink('maintenance mode');
-    $this->assertSession()->statusCodeEquals(200);
-    $this->assertSession()->elementContains('css', 'main h1', 'Maintenance mode');
+    $this->assertEquals('Maintenance mode', $this->cssSelect('main h1')[0]->getText());
   }
 
   /**

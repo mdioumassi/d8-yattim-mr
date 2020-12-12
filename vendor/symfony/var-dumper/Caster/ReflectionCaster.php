@@ -97,7 +97,7 @@ class ReflectionCaster
         $prefix = Caster::PREFIX_VIRTUAL;
 
         $a += [
-            $prefix.'name' => $c instanceof \ReflectionNamedType ? $c->getName() : (string) $c,
+            $prefix.'name' => $c->getName(),
             $prefix.'allowsNull' => $c->allowsNull(),
             $prefix.'isBuiltin' => $c->isBuiltin(),
         ];
@@ -120,7 +120,7 @@ class ReflectionCaster
             'file' => $c->getExecutingFile(),
             'line' => $c->getExecutingLine(),
         ];
-        if ($trace = $c->getTrace(\DEBUG_BACKTRACE_IGNORE_ARGS)) {
+        if ($trace = $c->getTrace(DEBUG_BACKTRACE_IGNORE_ARGS)) {
             $function = new \ReflectionGenerator($c->getExecutingGenerator());
             array_unshift($trace, [
                 'function' => 'yield',
@@ -182,7 +182,7 @@ class ReflectionCaster
 
         if (isset($a[$prefix.'returnType'])) {
             $v = $a[$prefix.'returnType'];
-            $v = $v instanceof \ReflectionNamedType ? $v->getName() : (string) $v;
+            $v = $v->getName();
             $a[$prefix.'returnType'] = new ClassStub($a[$prefix.'returnType']->allowsNull() ? '?'.$v : $v, [class_exists($v, false) || interface_exists($v, false) || trait_exists($v, false) ? $v : '', '']);
         }
         if (isset($a[$prefix.'class'])) {
@@ -244,7 +244,7 @@ class ReflectionCaster
         ]);
 
         if ($v = $c->getType()) {
-            $a[$prefix.'typeHint'] = $v instanceof \ReflectionNamedType ? $v->getName() : (string) $v;
+            $a[$prefix.'typeHint'] = $v->getName();
         }
 
         if (isset($a[$prefix.'typeHint'])) {
@@ -320,14 +320,10 @@ class ReflectionCaster
             foreach ($a[$prefix.'parameters']->value as $k => $param) {
                 $signature .= ', ';
                 if ($type = $param->getType()) {
-                    if (!$type instanceof \ReflectionNamedType) {
-                        $signature .= $type.' ';
-                    } else {
-                        if (!$param->isOptional() && $param->allowsNull()) {
-                            $signature .= '?';
-                        }
-                        $signature .= substr(strrchr('\\'.$type->getName(), '\\'), 1).' ';
+                    if (!$param->isOptional() && $param->allowsNull()) {
+                        $signature .= '?';
                     }
+                    $signature .= substr(strrchr('\\'.$type->getName(), '\\'), 1).' ';
                 }
                 $signature .= $k;
 

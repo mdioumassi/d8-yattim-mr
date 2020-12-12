@@ -64,12 +64,7 @@ class DbLogResourceTest extends ResourceTestBase {
     // Write a log message to the DB.
     $this->container->get('logger.channel.rest')->notice('Test message');
     // Get the ID of the written message.
-    $id = Database::getConnection()->select('watchdog', 'w')
-      ->fields('w', ['wid'])
-      ->condition('type', 'rest')
-      ->orderBy('wid', 'DESC')
-      ->range(0, 1)
-      ->execute()
+    $id = Database::getConnection()->queryRange("SELECT wid FROM {watchdog} WHERE type = :type ORDER BY wid DESC", 0, 1, [':type' => 'rest'])
       ->fetchField();
 
     $this->initAuthentication();

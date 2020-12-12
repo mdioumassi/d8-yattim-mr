@@ -15,7 +15,6 @@ use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Debug\ErrorHandler;
 use Symfony\Component\DependencyInjection\Container;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ContainerControllerResolver;
 
@@ -118,10 +117,16 @@ class ContainerControllerResolverTest extends ControllerResolverTest
         $this->expectException('LogicException');
         $this->expectExceptionMessage('Controller "Symfony\Component\HttpKernel\Tests\Controller\ImpossibleConstructController" cannot be fetched from the container because it is private. Did you forget to tag the service with "controller.service_arguments"?');
         $container = $this->getMockBuilder(Container::class)->getMock();
-        $container->expects($this->exactly(2))
+        $container->expects($this->at(0))
             ->method('has')
             ->with(ImpossibleConstructController::class)
-            ->willReturnOnConsecutiveCalls(true, false)
+            ->willReturn(true)
+        ;
+
+        $container->expects($this->at(1))
+            ->method('has')
+            ->with(ImpossibleConstructController::class)
+            ->willReturn(false)
         ;
 
         $container->expects($this->atLeastOnce())
@@ -176,10 +181,18 @@ class ContainerControllerResolverTest extends ControllerResolverTest
     {
         $this->expectException('LogicException');
         $this->expectExceptionMessage('Controller "app.my_controller" cannot be fetched from the container because it is private. Did you forget to tag the service with "controller.service_arguments"?');
+        $container = $this->getMockBuilder(Container::class)->getMock();
+        $container->expects($this->at(0))
+            ->method('has')
+            ->with('app.my_controller')
+            ->willReturn(false)
+        ;
 
-        $container = new ContainerBuilder();
-        $container->register('app.my_controller');
-        $container->removeDefinition('app.my_controller');
+        $container->expects($this->atLeastOnce())
+            ->method('getRemovedIds')
+            ->with()
+            ->willReturn(['app.my_controller' => true])
+        ;
 
         $resolver = $this->createControllerResolver(null, $container);
 
@@ -219,7 +232,7 @@ class ContainerControllerResolverTest extends ControllerResolverTest
         // All this logic needs to be duplicated, since calling parent::testGetControllerOnNonUndefinedFunction will override the expected exception and not use the regex
         $resolver = $this->createControllerResolver();
         $this->expectException($exceptionName);
-        $this->expectExceptionMessageMatches($exceptionMessage);
+        $this->expectExceptionMessageRegExp($exceptionMessage);
 
         $request = Request::create('/');
         $request->attributes->set('_controller', $controller);

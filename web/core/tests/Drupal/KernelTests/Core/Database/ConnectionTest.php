@@ -128,17 +128,33 @@ class ConnectionTest extends DatabaseTestBase {
       $this->markTestSkipped("This test only runs for MySQL");
     }
 
+    $db = Database::getConnection('default', 'default');
     // Disable the protection at the PHP level.
-    $this->expectException(DatabaseExceptionWrapper::class);
-    Database::getConnection('default', 'default')->query('SELECT * FROM {test}; SELECT * FROM {test_people}', [], ['allow_delimiter_in_query' => TRUE]);
+    try {
+      $db->query('SELECT * FROM {test}; SELECT * FROM {test_people}',
+        [],
+        ['allow_delimiter_in_query' => TRUE]
+      );
+      $this->fail('No PDO exception thrown for multiple statements.');
+    }
+    catch (DatabaseExceptionWrapper $e) {
+      $this->pass('PDO exception thrown for multiple statements.');
+    }
   }
 
   /**
    * Ensure that you cannot execute multiple statements.
    */
   public function testMultipleStatements() {
-    $this->expectException(\InvalidArgumentException::class);
-    Database::getConnection('default', 'default')->query('SELECT * FROM {test}; SELECT * FROM {test_people}');
+
+    $db = Database::getConnection('default', 'default');
+    try {
+      $db->query('SELECT * FROM {test}; SELECT * FROM {test_people}');
+      $this->fail('No exception thrown for multiple statements.');
+    }
+    catch (\InvalidArgumentException $e) {
+      $this->pass('Exception thrown for multiple statements.');
+    }
   }
 
   /**
