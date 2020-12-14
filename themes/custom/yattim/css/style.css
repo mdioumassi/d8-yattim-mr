@@ -169,3 +169,12 @@ padding: 0px;
   height: 85px;
   padding: 20px;
 }
+
+/* Bandeau */
+.bandeau {
+  border: 2px solid green;
+}
+.bandeau img {
+  margin-left: auto;
+  margin-right: auto;
+}
