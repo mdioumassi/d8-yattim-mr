@@ -4,7 +4,7 @@
  */
 
 .container {
-    width: 65%;
+    width: 70%;
 }
 
 #footer {
@@ -58,7 +58,7 @@
 
 .aisha {
     font-size: 25px;
-    margin-top: 62Px;
+    margin-top: 62px;
     margin-left: 10px;
     color: white;
 }
@@ -142,7 +142,7 @@ hr {
 
 #menu-account li a span {
     font-size: 35px;
-    color: #FFF;
+    color: #fff;
 }
 
 #menu-account li a span:hover {
