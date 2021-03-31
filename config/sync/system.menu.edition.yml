@@ -1,0 +1,10 @@
+uuid: 8fee15c0-99ec-490a-90c3-244963f282b0
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: R1bHT355tP5YYR3jv3CuhH-EbE1XAG-Wm_1NopHYL20
+id: edition
+label: Edition
+description: 'Menu de gestion des contenus du Back office'
+locked: true

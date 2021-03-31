@@ -1,0 +1,25 @@
+uuid: c6900a41-e5d3-4d24-b0bc-e9b7b3cbb746
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.activites
+  module:
+    - system
+  theme:
+    - yattim
+id: yattim_activites
+theme: yattim
+region: footer_third
+weight: 0
+provider: null
+plugin: 'system_menu_block:activites'
+settings:
+  id: 'system_menu_block:activites'
+  label: 'Nous soutenir'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

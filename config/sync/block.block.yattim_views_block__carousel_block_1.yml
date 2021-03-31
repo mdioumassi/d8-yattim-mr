@@ -1,0 +1,24 @@
+uuid: 0c4bfd35-ebed-4ef2-91e3-b54d4e21d5e5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.carousel
+  module:
+    - views
+  theme:
+    - yattim
+id: yattim_views_block__carousel_block_1
+theme: yattim
+region: banniere
+weight: 0
+provider: null
+plugin: 'views_block:carousel-block_1'
+settings:
+  id: 'views_block:carousel-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility: {  }

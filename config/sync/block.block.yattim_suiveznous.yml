@@ -1,0 +1,25 @@
+uuid: 59a6e25e-665a-4047-bfe2-c243856276de
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.suivez-nous
+  module:
+    - system
+  theme:
+    - yattim
+id: yattim_suiveznous
+theme: yattim
+region: footer
+weight: 0
+provider: null
+plugin: 'system_menu_block:suivez-nous'
+settings:
+  id: 'system_menu_block:suivez-nous'
+  label: Suivez-nous
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

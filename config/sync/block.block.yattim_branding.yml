@@ -1,0 +1,25 @@
+uuid: 06ecb7c3-be52-4eef-97fc-916923593701
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - yattim
+_core:
+  default_config_hash: Cy3vkpYrD1O5JG-BeEnokF0bByHYDEa8CBfWivB4_SQ
+id: yattim_branding
+theme: yattim
+region: navigation
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

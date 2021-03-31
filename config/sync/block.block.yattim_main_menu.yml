@@ -1,0 +1,27 @@
+uuid: 4b869336-c940-4573-93f2-b6f240e05a66
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - yattim
+_core:
+  default_config_hash: ERtUwuUKdqiRLiXjBoV7gcIIZgt2IdqWBzqsqtm63w4
+id: yattim_main_menu
+theme: yattim
+region: navigation_collapsible
+weight: -6
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 2
+  expand_all_items: false
+visibility: {  }

@@ -1,0 +1,50 @@
+uuid: c29396fc-6ec6-4d79-9509-6236a9151c51
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.actualites.body
+    - field.field.node.actualites.field_metatag
+    - field.field.node.actualites.field_photo
+    - image.style.aisha_950x300_
+    - node.type.actualites
+  module:
+    - image
+    - metatag
+    - text
+    - user
+id: node.actualites.default
+targetEntityType: node
+bundle: actualites
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_metatag:
+    weight: 3
+    label: visually_hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: metatag_empty_formatter
+    region: content
+  field_photo:
+    weight: 1
+    label: visually_hidden
+    settings:
+      image_style: aisha_950x300_
+      image_link: content
+    third_party_settings: {  }
+    type: image
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

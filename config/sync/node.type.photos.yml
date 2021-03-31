@@ -1,0 +1,16 @@
+uuid: fdcf5322-0bde-4acf-bc8d-16d96a8b99df
+langcode: fr
+status: true
+dependencies:
+  enforced:
+    module:
+      - photos
+_core:
+  default_config_hash: q9J-s3yQPf2lhmiH2cmBIXiZMfTadFwDZITlUZyHIHQ
+name: Photos
+type: photos
+description: 'Create a new photo album.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

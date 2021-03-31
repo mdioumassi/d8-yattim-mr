@@ -1,0 +1,25 @@
+uuid: 7248921c-d4ca-4867-81da-0f98044f5293
+langcode: fr
+status: false
+dependencies:
+  config:
+    - system.menu.first-footer
+  module:
+    - system
+  theme:
+    - yattim
+id: yattim_firstfooter
+theme: yattim
+region: footer_first
+weight: 0
+provider: null
+plugin: 'system_menu_block:first-footer'
+settings:
+  id: 'system_menu_block:first-footer'
+  label: 'First footer'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

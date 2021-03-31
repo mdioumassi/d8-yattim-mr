@@ -1,0 +1,22 @@
+uuid: 46e5596c-770e-4aef-9ed8-99a174e31e19
+langcode: fr
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - yattim
+_core:
+  default_config_hash: MhtNdV__HKRTab0ZPjkPNfYL4Ng4UPBucDLoC7Rg5Eo
+id: yattim_help
+theme: yattim
+region: help
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

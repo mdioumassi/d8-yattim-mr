@@ -1,0 +1,34 @@
+uuid: badb0131-e402-45b4-9bb2-982726cbe605
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.photos.body
+    - field.field.node.photos.comment_photos
+    - node.type.photos
+  module:
+    - text
+    - user
+_core:
+  default_config_hash: qAEfpM-XuQS9zElcEG568d0Xox9VrW-_ZfZkc63jxGc
+id: node.photos.teaser
+targetEntityType: node
+bundle: photos
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden:
+  comment: true
+  comment_photos: true
+  langcode: true

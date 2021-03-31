@@ -1,0 +1,43 @@
+schemas:
+  bootstrap: 8000
+  yattim: 8000
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: ''
+  url: 'http://yattim-mr.org/themes/custom/yattim/favicon.ico'
+  use_default: 1
+features:
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+  node_user_picture: 1
+logo:
+  path: ''
+  url: ''
+  use_default: 0
+table_responsive: '-1'
+region_wells:
+  navigation: ''
+  navigation_collapsible: ''
+  banniere: ''
+  soutenir: ''
+  header: ''
+  highlighted: ''
+  help: ''
+  content: ''
+  sidebar_first: ''
+  sidebar_second: ''
+  footer: ''
+  footer_first: ''
+  footer_second: ''
+  footer_third: ''
+cdn_theme: cosmo
+cdn_cache_ttl_versions: '604800'
+cdn_cache_ttl_themes: '604800'
+cdn_cache_ttl_assets: '0'
+cdn_cache_ttl_library: '0'
+reset_http_request_cache: ''
+table: ''
+navbar_position: static-top
+breadcrumb_home: 1
+langcode: fr

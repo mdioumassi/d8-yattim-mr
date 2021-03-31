@@ -1,0 +1,22 @@
+uuid: b8c21e8e-7e41-4a05-8dca-9ab93ee7e40b
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - yattim
+_core:
+  default_config_hash: wDR9JKEATSWldBjw8du8s3G2zjEYeQf88nlld11hMLo
+id: yattim_breadcrumbs
+theme: yattim
+region: header
+weight: -100
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

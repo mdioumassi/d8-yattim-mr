@@ -1,0 +1,20 @@
+uuid: a7561f61-c69d-4cf3-b794-5c134ab23eaa
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - yattim
+_core:
+  default_config_hash: 1TQP4b3ZnlzvIH9bj6cpCz_SyUHdJjLQkZnHpikjjhw
+id: yattim_page_title
+theme: yattim
+region: header
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

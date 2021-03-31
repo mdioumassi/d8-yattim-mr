@@ -1,0 +1,22 @@
+uuid: da995c29-19c7-438a-8ace-745b3b0e83da
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.projets
+id: node.projets.promote
+field_name: promote
+entity_type: node
+bundle: projets
+label: 'Promu en page d''accueil'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

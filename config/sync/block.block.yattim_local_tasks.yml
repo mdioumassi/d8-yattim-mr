@@ -1,0 +1,22 @@
+uuid: 4427950e-aa83-45b6-95de-4bb226847288
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - yattim
+_core:
+  default_config_hash: qHdtze2DZ2mFfaJadxjZz6epm92_SN9SAFY4yJGl8Fo
+id: yattim_local_tasks
+theme: yattim
+region: header
+weight: 10
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

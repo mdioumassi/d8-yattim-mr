@@ -1,0 +1,222 @@
+uuid: 13e811f1-960a-4edf-b7e5-b68d28bfcff7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - page_manager.page.home_page
+    - views.view.temoignage
+  content:
+    - 'block_content:basic:4d1c984b-16b4-4ab6-9d71-835f26f84e42'
+    - 'block_content:basic:60c4f83a-ce10-4cb5-8c22-ce284e2497a4'
+    - 'block_content:basic:673d657c-7481-4c43-9cec-9d5fa1036566'
+    - 'block_content:basic:8df51072-a066-475e-82cd-a10b24721801'
+    - 'block_content:basic:9ac13fbb-f5eb-4f1b-b1a3-5166da95e1a2'
+    - 'block_content:basic:b15b52b0-1f36-4999-bc37-c53610a1755e'
+    - 'block_content:basic:d0afd494-5ca3-4498-b08c-fa4ab17f3040'
+    - 'block_content:basic:d400ce07-5856-49fb-93a7-f66c2674f76b'
+    - 'block_content:basic:e195cfd8-09e7-48da-a8ac-460707b054d9'
+  module:
+    - block_content
+    - panels
+    - views
+id: home_page-panels_variant-0
+label: Panels
+variant: panels_variant
+variant_settings:
+  blocks:
+    46d66872-bc37-457d-a2b8-b1c05e46bcdd:
+      id: 'block_content:8df51072-a066-475e-82cd-a10b24721801'
+      label: 'TITRE YATTIM'
+      provider: block_content
+      label_display: '0'
+      status: true
+      info: ''
+      view_mode: full
+      region: top
+      weight: 1
+      uuid: 46d66872-bc37-457d-a2b8-b1c05e46bcdd
+      context_mapping: {  }
+    97681219-1e75-48a4-809b-87f642446b6f:
+      id: 'block_content:4d1c984b-16b4-4ab6-9d71-835f26f84e42'
+      label: 'QUI SOMMES NOUS'
+      provider: block_content
+      label_display: '0'
+      status: true
+      info: ''
+      view_mode: full
+      region: top_left
+      weight: -2
+      uuid: 97681219-1e75-48a4-809b-87f642446b6f
+      context_mapping: {  }
+    b0a30648-2e39-40c7-b062-a72cde868fb8:
+      id: 'block_content:d400ce07-5856-49fb-93a7-f66c2674f76b'
+      label: 'NOUS SOUTENIR'
+      provider: block_content
+      label_display: '0'
+      status: true
+      info: ''
+      view_mode: full
+      region: middle
+      weight: -2
+      uuid: b0a30648-2e39-40c7-b062-a72cde868fb8
+      context_mapping: {  }
+    75cf855e-e2eb-4dd7-8014-1744138634a0:
+      id: 'block_content:d0afd494-5ca3-4498-b08c-fa4ab17f3040'
+      label: PARTENAIRES
+      provider: block_content
+      label_display: '0'
+      status: true
+      info: ''
+      view_mode: full
+      region: top_right
+      weight: 0
+      uuid: 75cf855e-e2eb-4dd7-8014-1744138634a0
+      context_mapping: {  }
+    c7b79bc5-c166-44a0-bad2-8ef116d7a207:
+      id: 'block_content:60c4f83a-ce10-4cb5-8c22-ce284e2497a4'
+      label: TEMOIGNAGE
+      provider: block_content
+      label_display: '0'
+      status: true
+      info: ''
+      view_mode: full
+      region: top_middle
+      weight: -4
+      uuid: c7b79bc5-c166-44a0-bad2-8ef116d7a207
+      context_mapping: {  }
+    0bb37eb1-dc55-45ba-b1d5-a1bf29d0bcb2:
+      id: 'block_content:9ac13fbb-f5eb-4f1b-b1a3-5166da95e1a2'
+      label: PARRAINAGE
+      provider: block_content
+      label_display: '0'
+      status: true
+      info: ''
+      view_mode: full
+      region: bottom_left
+      weight: 0
+      uuid: 0bb37eb1-dc55-45ba-b1d5-a1bf29d0bcb2
+      context_mapping: {  }
+    9622d848-dcb0-4b09-a807-ef562d137d3c:
+      id: 'block_content:b15b52b0-1f36-4999-bc37-c53610a1755e'
+      label: DON
+      provider: block_content
+      label_display: '0'
+      status: true
+      info: ''
+      view_mode: full
+      region: bottom_right
+      weight: 0
+      uuid: 9622d848-dcb0-4b09-a807-ef562d137d3c
+      context_mapping: {  }
+    5238320c-69dc-469c-a514-4e2c2a57f738:
+      id: 'block_content:673d657c-7481-4c43-9cec-9d5fa1036566'
+      label: MEMBRE
+      provider: block_content
+      label_display: '0'
+      status: true
+      info: ''
+      view_mode: full
+      region: bottom_middle
+      weight: 0
+      uuid: 5238320c-69dc-469c-a514-4e2c2a57f738
+      context_mapping: {  }
+    fd75052f-f0db-4579-b088-a7ae6fbebeb6:
+      id: 'views_block:temoignage-block_1'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: bottom
+      weight: -4
+      uuid: fd75052f-f0db-4579-b088-a7ae6fbebeb6
+      context_mapping: {  }
+    0679b619-ac36-4798-8ed1-a099ae819002:
+      id: 'block_content:e195cfd8-09e7-48da-a8ac-460707b054d9'
+      label: notre_galerie
+      provider: block_content
+      label_display: '0'
+      status: true
+      info: ''
+      view_mode: full
+      region: bottom
+      weight: -5
+      uuid: 0679b619-ac36-4798-8ed1-a099ae819002
+      context_mapping: {  }
+  id: panels_variant
+  uuid: d9f997f8-4142-4fd5-b599-7c153292140c
+  label: null
+  weight: 0
+  layout: bs_3col_bricked
+  layout_settings:
+    label: ''
+    layout:
+      wrapper: div
+      classes:
+        row: row
+      add_layout_class: 1
+      attributes: ''
+    regions:
+      top:
+        wrapper: div
+        classes:
+          col-sm-12: col-sm-12
+        add_region_classes: 1
+        attributes: ''
+      top_left:
+        wrapper: div
+        classes:
+          col-sm-4: col-sm-4
+        add_region_classes: 1
+        attributes: ''
+      top_middle:
+        wrapper: div
+        classes:
+          col-sm-4: col-sm-4
+        add_region_classes: 1
+        attributes: ''
+      top_right:
+        wrapper: div
+        classes:
+          col-sm-4: col-sm-4
+        add_region_classes: 1
+        attributes: ''
+      middle:
+        wrapper: div
+        classes:
+          col-sm-12: col-sm-12
+        add_region_classes: 1
+        attributes: ''
+      bottom_left:
+        wrapper: div
+        classes:
+          col-sm-4: col-sm-4
+        add_region_classes: 1
+        attributes: ''
+      bottom_middle:
+        wrapper: div
+        classes:
+          col-sm-4: col-sm-4
+        add_region_classes: 1
+        attributes: ''
+      bottom_right:
+        wrapper: div
+        classes:
+          col-sm-4: col-sm-4
+        add_region_classes: 1
+        attributes: ''
+      bottom:
+        wrapper: div
+        classes:
+          col-sm-12: col-sm-12
+        add_region_classes: 1
+        attributes: ''
+  page_title: ''
+  storage_type: page_manager
+  storage_id: home_page-panels_variant-0
+  builder: standard
+page: home_page
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

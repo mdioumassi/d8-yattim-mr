@@ -1,0 +1,22 @@
+uuid: ffb8215f-309a-4e16-b26c-53281969afd2
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - yattim
+_core:
+  default_config_hash: 9RnnTUBcn0WRWXfrGOnId2H0Q31uQUeu_F5TnDxl2yg
+id: yattim_messages
+theme: yattim
+region: header
+weight: -50
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

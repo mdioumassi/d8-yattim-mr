@@ -1,0 +1,23 @@
+uuid: dd8a0fff-5cd4-4457-b1cd-e6d20df5ee53
+langcode: fr
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - yattim
+_core:
+  default_config_hash: F3d5hyAFunLh4PhGviJF019fHn1Z3_zy5gzsQ0tX1K0
+id: yattim_search
+theme: yattim
+region: navigation_collapsible
+weight: -7
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+  page_id: ''
+visibility: {  }

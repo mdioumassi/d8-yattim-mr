@@ -1,0 +1,25 @@
+uuid: 0a264e0d-53c9-473f-9c7c-c76c7a98cce4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.temoignage.field_temoignage
+    - field.field.node.temoignage.field_video_youtube
+    - node.type.temoignage
+  module:
+    - user
+id: node.temoignage.teaser
+targetEntityType: node
+bundle: temoignage
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_temoignage: true
+  field_video_youtube: true
+  langcode: true

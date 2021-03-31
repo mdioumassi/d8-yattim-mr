@@ -1,0 +1,22 @@
+uuid: ccbec3ba-c9d8-4215-aa1e-d4b0a9c5624a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - comment
+    - node
+_core:
+  default_config_hash: I3IdvSBcy0bxepEhPMq3droTVi2m94mDgtKbKW-VViM
+id: node.comment_photos
+field_name: comment_photos
+entity_type: node
+type: comment
+settings:
+  comment_type: comment_photos
+module: comment
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
