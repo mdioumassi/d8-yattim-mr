@@ -1,0 +1,28 @@
+uuid: 79205ba3-7b60-4d8d-8d0f-ec338e4e503a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_visuel
+    - media.type.image
+    - paragraphs.paragraphs_type.footer
+id: paragraph.footer.field_visuel
+field_name: field_visuel
+entity_type: paragraph
+bundle: footer
+label: Logo
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

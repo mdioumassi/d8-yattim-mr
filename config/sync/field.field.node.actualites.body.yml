@@ -11,7 +11,7 @@ id: node.actualites.body
 field_name: body
 entity_type: node
 bundle: actualites
-label: Body
+label: Description
 description: ''
 required: false
 translatable: true

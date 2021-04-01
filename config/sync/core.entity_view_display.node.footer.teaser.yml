@@ -1,0 +1,23 @@
+uuid: 5f2b9292-3686-419b-9cb8-0c52bf92554d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.footer.field_footer
+    - node.type.footer
+  module:
+    - user
+id: node.footer.teaser
+targetEntityType: node
+bundle: footer
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_footer: true
+  langcode: true

@@ -1,0 +1,34 @@
+uuid: 34e9e08c-73fb-4d0f-aac6-545c6e8eead1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_footer
+    - node.type.footer
+    - paragraphs.paragraphs_type.footer
+  module:
+    - entity_reference_revisions
+id: node.footer.field_footer
+field_name: field_footer
+entity_type: node
+bundle: footer
+label: footer
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      footer: footer
+    target_bundles_drag_drop:
+      footer:
+        enabled: true
+        weight: 3
+      remontee_partenaires:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

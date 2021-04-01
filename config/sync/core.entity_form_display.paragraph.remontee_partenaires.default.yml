@@ -1,0 +1,38 @@
+uuid: beeeeaa9-6d1a-468f-ac1b-f154eabdca45
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.remontee_partenaires.field_partenaire
+    - field.field.paragraph.remontee_partenaires.field_titre
+    - paragraphs.paragraphs_type.remontee_partenaires
+  module:
+    - paragraphs
+id: paragraph.remontee_partenaires.default
+targetEntityType: paragraph
+bundle: remontee_partenaires
+mode: default
+content:
+  field_partenaire:
+    type: entity_reference_paragraphs
+    weight: 0
+    settings:
+      title: Paragraphe
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_titre:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

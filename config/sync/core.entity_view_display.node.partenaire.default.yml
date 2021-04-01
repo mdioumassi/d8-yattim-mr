@@ -3,11 +3,13 @@ langcode: fr
 status: true
 dependencies:
   config:
-    - field.field.node.partenaire.body
-    - field.field.node.partenaire.field_photo
+    - field.field.node.partenaire.field_description
+    - field.field.node.partenaire.field_url
+    - field.field.node.partenaire.field_visuel
     - node.type.partenaire
   module:
-    - image
+    - link
+    - media
     - text
     - user
 id: node.partenaire.default
@@ -15,26 +17,34 @@ targetEntityType: node
 bundle: partenaire
 mode: default
 content:
-  body:
+  field_description:
+    weight: 1
     label: hidden
-    type: text_default
-    weight: 101
     settings: {  }
     third_party_settings: {  }
+    type: text_default
     region: content
-  field_photo:
-    weight: 102
-    label: above
+  field_url:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_visuel:
+    type: media_thumbnail
+    weight: 0
+    label: hidden
     settings:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
-    type: image
-    region: content
-  links:
-    weight: 100
-    settings: {  }
-    third_party_settings: {  }
     region: content
 hidden:
   langcode: true
+  links: true

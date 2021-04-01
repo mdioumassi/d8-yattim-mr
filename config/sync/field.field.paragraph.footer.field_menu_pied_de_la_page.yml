@@ -1,0 +1,23 @@
+uuid: 931da7fb-4b3e-4e8e-be89-49776c1f1845
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_menu_pied_de_la_page
+    - paragraphs.paragraphs_type.footer
+  module:
+    - link
+id: paragraph.footer.field_menu_pied_de_la_page
+field_name: field_menu_pied_de_la_page
+entity_type: paragraph
+bundle: footer
+label: 'Menu Pied de la page'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

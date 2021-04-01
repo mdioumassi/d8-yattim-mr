@@ -1,0 +1,30 @@
+uuid: 43f0beb5-ce7b-4bd2-af96-546f7e00c8eb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_partenaire
+    - node.type.partenaire
+    - paragraphs.paragraphs_type.remontee_partenaires
+  module:
+    - entity_reference_revisions
+id: paragraph.remontee_partenaires.field_partenaire
+field_name: field_partenaire
+entity_type: paragraph
+bundle: remontee_partenaires
+label: Partenaire
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      partenaire: partenaire
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference_revisions

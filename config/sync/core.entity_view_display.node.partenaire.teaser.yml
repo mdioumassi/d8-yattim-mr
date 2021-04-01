@@ -4,30 +4,24 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
-    - field.field.node.partenaire.body
-    - field.field.node.partenaire.field_photo
+    - field.field.node.partenaire.field_description
+    - field.field.node.partenaire.field_url
+    - field.field.node.partenaire.field_visuel
     - node.type.partenaire
   module:
-    - text
     - user
 id: node.partenaire.teaser
 targetEntityType: node
 bundle: partenaire
 mode: teaser
 content:
-  body:
-    label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
-    settings:
-      trim_length: 600
-    third_party_settings: {  }
-    region: content
   links:
     weight: 100
     settings: {  }
     third_party_settings: {  }
     region: content
 hidden:
-  field_photo: true
+  field_description: true
+  field_url: true
+  field_visuel: true
   langcode: true

@@ -1,0 +1,50 @@
+uuid: 6e65d58f-ea60-42bc-a1ce-8ec52c23a453
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.footer.field_menu
+    - field.field.paragraph.footer.field_menu_pied_de_la_page
+    - field.field.paragraph.footer.field_visuel
+    - paragraphs.paragraphs_type.footer
+  module:
+    - link
+id: paragraph.footer.default
+targetEntityType: paragraph
+bundle: footer
+mode: default
+content:
+  field_menu:
+    weight: 1
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_menu_pied_de_la_page:
+    weight: 2
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_visuel:
+    type: entity_reference_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden: {  }

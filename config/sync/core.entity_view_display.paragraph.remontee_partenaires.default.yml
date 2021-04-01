@@ -1,0 +1,33 @@
+uuid: ecf531ce-a238-4e1e-9150-acc36d811e58
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.remontee_partenaires.field_partenaire
+    - field.field.paragraph.remontee_partenaires.field_titre
+    - paragraphs.paragraphs_type.remontee_partenaires
+  module:
+    - entity_reference_revisions
+id: paragraph.remontee_partenaires.default
+targetEntityType: paragraph
+bundle: remontee_partenaires
+mode: default
+content:
+  field_partenaire:
+    type: entity_reference_revisions_entity_view
+    weight: 0
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_titre:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

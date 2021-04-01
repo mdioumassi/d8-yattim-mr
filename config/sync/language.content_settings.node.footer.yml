@@ -1,0 +1,11 @@
+uuid: d59004e8-3d36-4e9e-a654-bcd2ef456b2f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.footer
+id: node.footer
+target_entity_type_id: node
+target_bundle: footer
+default_langcode: site_default
+language_alterable: false

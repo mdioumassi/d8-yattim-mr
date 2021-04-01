@@ -1,0 +1,43 @@
+uuid: 91913063-8243-498a-a395-a92cfd2c10a3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.footer.field_menu
+    - field.field.paragraph.footer.field_menu_pied_de_la_page
+    - field.field.paragraph.footer.field_visuel
+    - paragraphs.paragraphs_type.footer
+  module:
+    - link
+    - media_library
+id: paragraph.footer.default
+targetEntityType: paragraph
+bundle: footer
+mode: default
+content:
+  field_menu:
+    weight: 1
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_menu_pied_de_la_page:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_visuel:
+    type: media_library_widget
+    weight: 0
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

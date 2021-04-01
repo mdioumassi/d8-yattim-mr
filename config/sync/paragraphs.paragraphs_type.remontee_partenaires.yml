@@ -1,0 +1,10 @@
+uuid: dde723c5-4d49-40d7-a7a8-dd2e9bd02c74
+langcode: fr
+status: true
+dependencies: {  }
+id: remontee_partenaires
+label: 'Remontée de partenaires'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }
